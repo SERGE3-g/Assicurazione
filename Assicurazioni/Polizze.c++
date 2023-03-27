@@ -1,23 +1,3 @@
-/*Scegli un database relazionale: puoi scegliere tra diversi database relazionali, come MySQL, PostgreSQL o SQLite.
-
-Crea le tabelle del database: crea le tabelle necessarie per gestire le informazioni sugli utenti e sulle polizze. Ad esempio, potresti creare una tabella "Utenti" con colonne come nome, cognome, indirizzo e una tabella "Polizze" con colonne come tipo, premio, copertura, data di scadenza e un campo di chiave esterna che si riferisce all'ID dell'utente.
-
-Connettiti al database: utilizza una libreria di connessione al database come la libreria MySQL Connector/C++ o PostgreSQL C++ API per connetterti al database e gestire i dati.
-
-Crea la classe Polizza: crea una classe Polizza che rappresenta una singola polizza assicurativa. La classe dovrebbe avere attributi come il tipo di assicurazione, il premio assicurativo, la copertura massima, la data di scadenza e un campo di chiave esterna che si riferisce all'ID dell'utente.
-
-Implementa i metodi della classe Polizza: implementa i metodi necessari per permettere all'utente di effettuare operazioni come l'acquisto di una polizza, la modifica delle informazioni dell'assicurato, il pagamento del premio e la richiesta di risarcimento. Assicurati di utilizzare le funzioni di connessione al database per salvare le informazioni sulla polizza nel database.
-
-Crea la classe Utente: crea una classe Utente che rappresenta un singolo utente dell'assicurazione. La classe dovrebbe avere attributi come nome, cognome, indirizzo e un campo di chiave primaria per identificare univocamente ogni utente.
-
-Implementa i metodi della classe Utente: implementa i metodi necessari per permettere all'utente di effettuare operazioni come la registrazione, la modifica delle informazioni personali e la visualizzazione delle polizze possedute. Assicurati di utilizzare le funzioni di connessione al database per salvare le informazioni sull'utente nel database.
-
-Crea l'interfaccia utente: crea un'interfaccia utente che permetta all'utente di interagire con il programma. Utilizza una libreria grafica come Qt per creare un'interfaccia grafica facile da usare.
-
-Testa il programma: testa il programma utilizzando tecniche di testing come il testing unitario e il testing funzionale per assicurarti che funzioni correttamente.
-
-Pubblica il programma e fornisci supporto ai clienti: pubblica il programma e fornisci un supporto ai clienti per risolvere eventuali problemi o rispondere alle loro domande. Assicurati di avere un team dedicato alla gestione e al supporto degli utenti.*/
-
 #include <iostream>
 #include <string>
 //#include "mysqlx/xdevapi.h";
