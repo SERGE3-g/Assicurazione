@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/sergeguea/Library/Application Support/Code - Insiders/User/globalStorage/Assicurazione/1679926215349@@localhost@3306@Assicurazione",
-      "program": "/Users/sergeguea/Library/Application Support/Code - Insiders/User/globalStorage/Assicurazione/1679926215349@@localhost@3306@Assicurazione/build/Debug/outDebug"
+      "cwd": "/Users/sergeguea/Assicura/Assicurazione",
+      "program": "/Users/sergeguea/Assicura/Assicurazione/build/Debug/outDebug"
     }
   ]
 }

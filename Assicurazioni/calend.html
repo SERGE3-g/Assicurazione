@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda Turni di Lavoro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+</head>
+<body>
+    <h1>Agenda Turni di Lavoro</h1>
+    <navbar id="navbar">
+        <a href="index.html">Home</a>
+        <a href="calend.html">Calendario</a>
+        <a href="dipendenti.html">Dipendenti</a>
+        <a href="turni.html">Turni</a>
+        <a href="assenze.html">Assenze</a>
+        <a href="ferie.html">Ferie</a>
+        <a href="congedi.html">Congedi</a>
+        <a href="ore.html">Ore</a>
+        <a href="rapporti.html">Rapporti</a>
+        <a href="pagamenti.html">Pagamenti</a>
+        <a href="login.html">Login</a>
+    </navbar>
+    <h2>Calendario</h2>
+    <p>Seleziona un giorno e inserisci il nome del dipendente per aggiungere un evento.</p>
+    <p>Clicca su un evento per cancellarlo.</p>
+    <div id="calendar"></div>
+    <form id="add-event-form">
+        <label for="employee">Dipendente:</label>
+        <input type="text" id="employee" name="employee" required><br>
+        <label for="start">Inizio:</label>
+        <input type="datetime-local" id="start" name="start" required><br>
+        <label for="end">Fine:</label>
+        <input type="datetime-local" id="end" name="end" required><br>
+        <button type="submit">Aggiungi</button>
+    </form>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                timeZone: 'Europe/Rome',
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                editable: true,
+                selectable: true,
+                events: [
+                    {
+                        title: 'John',
+                        start: '2023-03-28T08:00:00',
+                        end: '2023-03-28T16:00:00'
+                    },
+                    {
+                        title: 'Mary',
+                        start: '2023-03-29T08:00:00',
+                        end: '2023-03-29T16:00:00'
+                    }
+                ],
+                select: function(info) {
+                    var form = document.getElementById('add-event-form');
+                    form.elements.start.value = info.startStr;
+                    form.elements.end.value = info.endStr;
+                    calendar.unselect();
+                },
+                eventClick: function(info) {
+                    if (confirm("Vuoi cancellare questo evento?")) {
+                        info.event.remove();
+                    }
+                }
+            });
+            calendar.render();
+            var form = document.getElementById('add-event-form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                var employee = form.elements.employee.value;
+                var start = moment(form.elements.start.value);
+                var end = moment(form.elements.end.value);
+                calendar.addEvent({
+                    title: employee,
+                    start: start,
+                    end: end
+                });
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>
