@@ -33,5 +33,7 @@
     "**/.vscode",
     "**/.vscode/**"
   ],
-  "C_Cpp_Runner.useAddressSanitizer": false
+  "C_Cpp_Runner.useAddressSanitizer": false,
+  "codegpt.apiKey": "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",
+  "CodeGPT.apiKey": "OpenAI"
 }
