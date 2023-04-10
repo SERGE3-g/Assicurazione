@@ -5,14 +5,14 @@ using namespace mysqlx;
 const string host = "localhost";
 const unsigned int port = 3306;
 const string user = "root";
-const string password = "Gueaserge";
+const string password = "************";
 const string schema = "Assicurazione";
 
 // creo una connessione al database
 Session session(SessionOption::HOST, host, port, SessionOption::USER, user, SessionOption::PWD, password);
 Schema mySchema = session.getSchema(schema);
 
-// ottieni la tabella Polizze
+// ottengo  la tabella Polizze
 Table polizze = mySchema.getTable("Polizze");
 
 // ottieni la polizza con id = 1
@@ -21,7 +21,7 @@ RowResult result = polizze.select("id", "tipo", "premio", "copertura", "dataScad
                           .bind("id", 1)
                           .execute();
 
-// ottieni la prima riga del risultato
+//ottengo la prima riga del risultato
 Row row = result.fetchOne();
 
 
